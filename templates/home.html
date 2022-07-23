@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>South Dakota Pictures</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                background-color: #303030;
+            }
+            h1 {
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            .image {
+                padding: 10px;
+            }
+            .image_group {
+                text-align: center;
+            }
+        </style>
+        <h1 style="text-align: center;">South Dakota Images</h1>
+        <div class="image_group">
+            {% for image in images %}
+                <img src="/static/dakota/{{ image }}" width="75%" class="image">
+            {% endfor %}
+        </div>
+    </body>
+</html>
