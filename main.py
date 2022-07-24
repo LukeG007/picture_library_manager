@@ -15,8 +15,8 @@ def home():
 def library_view(id):
     if not id in libraries:
         abort(404)
-    images = os.listdir(os.path.join('static', id))
-    return render_template('library.html', images=images, title=libraries[id])
+    images = os.listdir(os.path.join('static', 'libraries', id))
+    return render_template('library.html', images=images, title=libraries[id], id=id)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5473)
