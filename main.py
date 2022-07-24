@@ -2,8 +2,10 @@ from flask import Flask, render_template, abort
 import os
 import json
 import sqlite3
+import user_mgmt
 
 app = Flask(__name__)
+user_sys = user_mgmt.UserManagement()
 db = sqlite3.connect('db.sqlite')
 cur = db.cursor()
 cur.execute('CREATE TABLE IF NOT EXISTS libraries(id TEXT, pretty_name TEXT)')
