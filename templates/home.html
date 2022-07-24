@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>South Dakota Pictures</title>
+        <title>Picture Library</title>
     </head>
     <body>
         <style>
@@ -14,18 +13,21 @@
                 font-family: Arial, Helvetica, sans-serif;
                 color: white;
             }
-            .image {
-                padding: 10px;
+            .link {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
             }
-            .image_group {
-                text-align: center;
+            .link:link {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #55ffff;
+            }
+            .link:visited {
+                color: #55ffff;
             }
         </style>
-        <h1 style="text-align: center;">South Dakota Images</h1>
-        <div class="image_group">
-            {% for image in images %}
-                <img src="/static/dakota/{{ image }}" width="75%" class="image">
-            {% endfor %}
-        </div>
+        <h1>Picture Library</h1>
+        {% for library in libraries %}
+            <a href="/library/{{ library }}" class="link">{{ libraries[library] }}</a><br/>
+        {% endfor %}
     </body>
 </html>
